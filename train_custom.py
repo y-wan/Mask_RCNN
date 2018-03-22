@@ -333,10 +333,10 @@ if __name__ == '__main__':
         model.load_weights(COCO_MODEL_PATH, by_name=True,
                            exclude=["mrcnn_class_logits", "mrcnn_bbox_fc", 
                                     "mrcnn_bbox", "mrcnn_mask"])
-    else if args.model.lower() == "last":
+    elif args.model.lower() == "last":
         # Load the last model you trained and continue training
         model.load_weights(model.find_last()[1], by_name=True)
-    else if args.model.lower() == "imagenet":
+    elif args.model.lower() == "imagenet":
         model.load_weights(model.get_imagenet_weights(), by_name=True)
     else:
         model.load_weights(args.model, by_name=True)
